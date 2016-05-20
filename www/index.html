@@ -1,0 +1,609 @@
+<!DOCTYPE html>
+<html class="no-js">
+	<head>
+
+		<!-- Include meta tag to ensure proper rendering and touch zooming -->
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+
+		<!-- Include jQuery Mobile stylesheets -->
+		<link rel="stylesheet" href="jquery.mobile-1.4.5.min.css">
+		<!-- <link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css"> -->
+
+		<!-- Include the jQuery library -->
+		<script src="jquery-1.11.3.min.js"></script>
+		<!-- <script src="http://code.jquery.com/jquery-1.11.3.min.js"></script> -->
+
+		<!-- Include the jQuery Mobile library -->
+		<script src="jquery.mobile-1.4.5.min.js"></script>
+		<!-- <script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script> -->
+
+	</head>
+
+	<body>
+
+		<div data-role="page" data-theme="a" id="pgLogin">
+			<!-- <div data-role="header" data-position="inline">
+			<h1>GIPC</h1>
+			</div> -->
+			<div data-role="content" data-theme="c">
+				<div id="" style="text-align: center; height: 100%;">
+					<img src="img/GIPC.png" width="50%"/>
+					<div style="box-shadow:5px 5px 0px white; padding: 10px">
+						<label for="username">Username</label>
+						<input name="" id="username" type="text" placeholder="Enter Username" value="" style="height: 50px;">
+						<label for="password">Password</label>
+						<input name="password" id="password" type="password" placeholder="Enter Password" value=""  style="height: 50px;">
+						<p>
+							<button class="ui-btn ui-corner-all" id="btnLogin" style="background: skyblue; text-shadow: none">
+								Login
+							</button>
+						</p>
+						<p id="progress">
+							&nbsp;
+						</p>
+						<p style="font-size: smaller;">
+							<a href="#pgsignup" style="text-decoration: none;">Sign up for GIPC Mobile&rarr;</a>
+						</p>
+						<p style="font-size: smaller;">
+							<a href="#pgforgot" style="text-decoration: none;"> &larr; Forgot Password</a>
+						</p>
+						<p style="font-size: smaller;">
+							<a href="#pgchange" style="text-decoration: none;">Change Password</a>
+						</p>
+					</div>
+				</div>
+
+			</div>
+
+		</div>
+
+		<div data-role="page" data-theme="a" id="pgchange">
+			<!-- <div data-role="header" data-position="inline">
+			<h1>GIPC</h1>
+			</div> -->
+			<div data-role="content" data-theme="c">
+				<div id="" style="text-align: center; height: 100%;">
+					<img src="img/GIPC.png" width="50%"/>
+					<div style="box-shadow:5px 5px 0px white; padding: 10px">
+						<p>
+							<a href="#pgLogin" style="text-decoration: none;">&larr;Back</a>
+						</p>
+						<label for="fname">Username</label>
+						<input name="" id="uname" type="text" style="height: 50px;">
+						<label for="fname">Old Password</label>
+						<input name="" id="oldpass" type="text" style="height: 50px;">
+						<label for="fname">New Password</label>
+						<input name="" id="newpass" type="text" style="height: 50px;">
+						<p>
+							<button class="ui-btn ui-corner-all" id="btnchangepass" style="background: skyblue; text-shadow: none">
+								Send
+							</button>
+						</p>
+						<p id="cprogress"></p>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div data-role="page" data-theme="a" id="pgforgot">
+			<!-- <div data-role="header" data-position="inline">
+			<h1>GIPC</h1>
+			</div> -->
+			<div data-role="content" data-theme="c">
+				<div id="" style="text-align: center; height: 100%;">
+					<img src="img/GIPC.png" width="50%"/>
+					<div style="box-shadow:5px 5px 0px white; padding: 10px">
+						<p>
+							<a href="#pgLogin" style="text-decoration: none;">&larr;Back</a>
+						</p>
+						<p style="font-size: smaller">
+							Enter your username below
+						</p>
+						<label for="fname">Username</label>
+						<input name="" id="uname" type="text" style="height: 50px;">
+						<p>
+							<button class="ui-btn ui-corner-all" id="btnforpass" style="background: skyblue; text-shadow: none">
+								Send
+							</button>
+						</p>
+						<p id="fprogress"></p>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div data-role="page" data-theme="a" id="pgsignup">
+			<!-- <div data-role="header" data-position="inline">
+			<h1>GIPC</h1>
+			</div> -->
+			<div data-role="content" data-theme="c">
+				<div id="" style="text-align: center; height: 100%;">
+					<img src="img/GIPC.png" width="50%"/>
+					<div style="box-shadow:5px 5px 0px white; padding: 10px">
+						<p>
+							<a href="#pgLogin" style="text-decoration: none;">&larr;Sign in</a>
+						</p>
+						<p style="font-size: smaller">
+							Enter the following details to sign up
+						</p>
+						<label for="fname">Full Name</label>
+						<input name="" id="fname" type="text" placeholder="Enter Full Name" value="" style="height: 50px;">
+						<label for="gender">Gender</label>
+						<select id="gender">
+							<option>Male</option>
+							<option>Female</option>
+						</select>
+						<label for="susername">Username</label>
+						<input name="" id="susername" type="text" placeholder="Enter Username" value="" style="height: 50px;">
+						<label for="spassword">Password</label>
+						<input id="spassword" type="password" placeholder="Enter Password" value=""  style="height: 50px;">
+						<label for="email">Email</label>
+						<input id="email" type="text" placeholder="Enter Email" value="" style="height: 50px;">
+						<label for="mobile">Mobile Number</label>
+						<input name="" id="mobile" type="text" placeholder="Enter Mobile Number" value="" style="height: 50px;">
+						<p>
+							<button class="ui-btn ui-corner-all" id="btnsignup" style="background: skyblue; text-shadow: none">
+								Sign up
+							</button>
+						</p>
+						<p id="sprogress"></p>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div data-role="page" data-theme="a" id="pgFunctions">
+			<div data-role="header" data-position="inline">
+				<a href="#" data-iconpos="" class="ui-btn ui-shadow ui-corner-all ui-icon-back ui-btn-icon-notext ui-btn-a ui-btn-inline" data-rel="back">Logout</a>
+			</div>
+			<div data-role="content" data-theme="c">
+				<div style="width: 100%; text-align: center; padding-top: 10%;">
+					<a href="#pgApplications" data-transition='slide' class="ui-input-btn ui-btn ui-btn-inline" style="padding:5%; width: 30%; float: left; font-size: small;" > <img src="img/app.png" width="50%" />
+					<br />
+					Registrations </a>
+					<!-- <br /> -->
+					<a href="#pgQuotas" data-transition='slide' class="ui-input-btn ui-btn ui-btn-inline" style="padding: 5%; width: 30%; float: right; font-size: small;"> <img src="img/quota.png"  width="50%" />
+					<br />
+					Quotas </a>
+					<br />
+					<a href="#pgtechtrans" data-transition='slide' class="ui-input-btn ui-btn ui-btn-inline" style="padding:5%; width: 30%; float: left; font-size: small;"> <img src="img/GIPC.png"   width="50%" />
+					<br />
+					Tech Transfer </a>
+					<br />
+					<a href="#pgstrategic" data-transition='slide' class="ui-input-btn ui-btn ui-btn-inline" style="padding:5%; width: 30%; float: right; font-size: small; word-wrap:break-word;"> <img src="img/GIPC.png"   width="50%" />
+					<br />
+					Strategic Inv </a>
+					<br />
+					<a href="#pgenquiries" data-transition='slide' class="ui-input-btn ui-btn ui-btn-inline" style="padding:5%; width: 30%; float: left; font-size: small;"> <img src="img/GIPC.png"   width="50%" />
+					<br />
+					Make
+					<br/>
+					Enquiries </a>
+					<br />
+					<a href="#pgrenewal" data-transition='slide' class="ui-input-btn ui-btn ui-btn-inline" style="padding:5%; width: 30%; float: right; font-size: small; word-wrap:break-word;"> <img src="img/GIPC.png"   width="50%" />
+					<br />
+					Certificate
+					<br/>
+					Replacement </a>
+					<br />
+					<a href="#pgopportunities" data-transition='slide' class="ui-input-btn ui-btn ui-btn-inline" style="padding:5%; width: 30%; float: left; font-size: small;"> <img src="img/GIPC.png"   width="50%" />
+					<br />
+					Opportunities </a>
+
+				</div>
+			</div>
+
+		</div>
+
+		<div data-role="page" data-theme="a" id="pgApplications">
+			<div data-role="header" data-position="inline">
+				<a href="#" data-iconpos="notext" class="ui-btn ui-shadow ui-corner-all ui-icon-back ui-btn-icon-notext ui-btn-a ui-btn-inline" data-rel="back" >Go Back</a>
+				<h1>Applications</h1>
+			</div>
+			<div data-role="content" data-theme="c" id="contentApplications">
+
+			</div>
+		</div>
+
+		<div data-role="page" data-theme="a" id="pgduerenewals">
+			<div data-role="header" data-position="inline">
+				<a href="#" data-iconpos="notext" class="ui-btn ui-shadow ui-corner-all ui-icon-back ui-btn-icon-notext ui-btn-a ui-btn-inline" data-rel="back" >Go Back</a>
+				<h1>Overdue Renewals</h1>
+			</div>
+			<div data-role="content" data-theme="c" id="contentduerenewals">
+
+			</div>
+		</div>
+
+		<div data-role="page" data-theme="a" id="pgQuotas">
+			<div data-role="header" data-position="inline">
+				<a href="#" data-iconpos="notext" class="ui-btn ui-shadow ui-corner-all ui-icon-back ui-btn-icon-notext ui-btn-a ui-btn-inline" data-rel="back">Go Back</a>
+				<h1>Quotas</h1>
+			</div>
+			<div data-role="content" data-theme="c" id="contentQuota">
+
+			</div>
+
+		</div>
+
+		<div data-role="page" data-theme="a" id="pgtechtrans">
+			<div data-role="header" data-position="inline">
+				<a href="#" data-iconpos="notext" class="ui-btn ui-shadow ui-corner-all ui-icon-back ui-btn-icon-notext ui-btn-a ui-btn-inline" data-rel="back">Go Back</a>
+				<h1>Tech Trans.</h1>
+			</div>
+			<div data-role="content" data-theme="c" id="contenttechtrans">
+
+			</div>
+
+		</div>
+
+		<div data-role="page" data-theme="a" id="pgstrategic">
+			<div data-role="header" data-position="inline">
+				<a href="#" data-iconpos="notext" class="ui-btn ui-shadow ui-corner-all ui-icon-back ui-btn-icon-notext ui-btn-a ui-btn-inline" data-rel="back">Go Back</a>
+				<h1>Strategic</h1> 
+			</div>
+			<div data-role="content" data-theme="c" id="contentstrtegic">
+
+			</div>
+
+		</div>
+
+		<div data-role="page" data-theme="a" id="pgopportunities">
+			<div data-role="header" data-position="inline">
+				<a href="#" data-iconpos="notext" class="ui-btn ui-shadow ui-corner-all ui-icon-back ui-btn-icon-notext ui-btn-a ui-btn-inline" data-rel="back">Go Back</a>
+				<h1>Opportunities</h1>
+			</div>
+			<div data-role="content" data-theme="c" id="contentOpp">
+			<p>Find an Opportunity</p>
+			<label for="opp_keywords">Keyword(s)</label>
+			<input name="" id="opp_keywords" type="text" style="height: 50px;">
+			<label for="opp_sector">Sector</label>
+			<select id="opp_sector">
+			<option>- Select Sector -</option>
+			</select>
+			<label for="opp_markets">Market</label>
+			<select id="opp_markets">
+				<option>- Select Market -</option>
+				<option>Diaspora</option>
+				<option>Export</option>
+				<option>Local</option>
+				<option>Sub region</option>
+			</select>
+			<p>
+				<button class="ui-btn ui-corner-all" id="btnfindopp" style="background: skyblue; text-shadow: none">
+					Search
+				</button>
+			</p>
+
+			</div>
+
+		</div>
+
+		<div data-role="page" data-theme="a" id="pglistopps">
+			<div data-role="header" data-position="inline">
+				<a href="#" data-iconpos="notext" class="ui-btn ui-shadow ui-corner-all ui-icon-back ui-btn-icon-notext ui-btn-a ui-btn-inline" data-rel="back">Go Back</a>
+				<h1>Search Results</h1>
+			</div>
+			<div data-role="content" data-theme="c" id="contentlistopps">
+
+			</div>
+
+		</div>
+
+		<div data-role="page" data-theme="a" id="pgenquiries">
+			<div data-role="header" data-position="inline">
+				<a href="#" data-iconpos="notext" class="ui-btn ui-shadow ui-corner-all ui-icon-back ui-btn-icon-notext ui-btn-a ui-btn-inline" data-rel="back">Go Back</a>
+				<h1>Make Enquiry</h1>
+			</div>
+			<div data-role="content" data-theme="c" id="contentMake">
+				<label for="enq_fname">Full Name</label>
+				<input name="" id="enq_fname" type="text" placeholder="eg. Ebo Bentil" value="" style="height: 50px;">
+				<label for="enq_cname">Company Name</label>
+				<input name="" id="enq_cname" type="text" placeholder="eg. NALO" value="" style="height: 50px;">
+				<label for="enq_interest">Sector of Interest</label>
+				<input name="" id="enq_interest" type="text" placeholder="eg. AGRIC" value="" style="height: 50px;">
+				<label for="enq_origin">Country Of Origin</label>
+				<input name="" id="enq_origin" type="text" placeholder="eg. Ireland" value="" style="height: 50px;">
+				<label for="enq_email">Email Address</label>
+				<input name="" id="enq_email" type="text" placeholder="eg. ebo@yahoo.com" value="" style="height: 50px;">
+				<label for="enq_mobile">Mobile Number</label>
+				<input name="" id="enq_mobile" type="text" placeholder="eg. 233.." value="" style="height: 50px;">
+				<label for="enq_enquiry">Enquiry</label>
+				<textarea id="enq_enquiry" placeholder="Type enquiry here" rows="3"></textarea>
+				<p>
+					<button class="ui-btn ui-corner-all" id="btnEnquiry" style="background: skyblue; text-shadow: none">
+						Send Enquiry
+					</button>
+				</p>
+				<p id="enq_progress">
+					&nbsp;
+				</p>
+			</div>
+
+		</div>
+		<div data-role="page" data-theme="a" id="pgrenewal">
+			<div data-role="header" data-position="inline">
+				<a href="#" data-iconpos="notext" class="ui-btn ui-shadow ui-corner-all ui-icon-back ui-btn-icon-notext ui-btn-a ui-btn-inline" data-rel="back">Go Back</a>
+				<h1>Certificate Renewal</h1>
+			</div>
+			<div data-role="content" data-theme="c" id="contentMake">
+				<label for="rep_fname">Full Name</label>
+				<input name="" id="rep_fname" type="text" placeholder="eg. Mina Akoto" value="" style="height: 50px;">
+				<label for="rep_cname">Company Name</label>
+				<input name="" id="rep_cname" type="text" placeholder="eg. NALO" value="" style="height: 50px;">
+				<label for="rep_email">Email Address</label>
+				<input name="" id="rep_email" type="text" placeholder="eg. mina@yahoo.com" value="" style="height: 50px;">
+				<label for="rep_mobile">Mobile Number</label>
+				<input name="" id="rep_mobile" type="text" placeholder="eg. 233.." value="" style="height: 50px;">
+				<label for="rep_reason">Reason For Replacement</label>
+				<textarea id="rep_reason" placeholder="Type reason here" rows="3"></textarea>
+				<p>
+					<button class="ui-btn ui-corner-all" id="btnRenewal" style="background: skyblue; text-shadow: none">
+						Send Request
+					</button>
+				</p>
+				<p id="rep_progress">
+					&nbsp;
+				</p>
+			</div>
+
+		</div>
+		<!-- Add your site or application content here -->
+
+		<!-- <script src="js/vendor/jquery-2.1.0.min.js"></script>
+		<script src="js/helper.js"></script>
+		<script src="js/main.js"></script> -->
+
+		<!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
+		<script>
+			// ( function(b, o, i, l, e, r) {
+			// 		b.GoogleAnalyticsObject = l;
+			// 		b[l] || (b[l] = function() {
+			// 			(b[l].q = b[l].q || []).push(arguments)
+			// 		});
+			// 		b[l].l = +new Date;
+			// 		e = o.createElement(i);
+			// 		r = o.getElementsByTagName(i)[0];
+			// 		e.src = '//www.google-analytics.com/analytics.js';
+			// 		r.parentNode.insertBefore(e, r)
+			// 	}(window, document, 'script', 'ga'));
+			// ga('create', 'UA-XXXXX-X');
+			// ga('send', 'pageview');
+		</script>
+		<script>
+			$("#btnLogin").click(function() {
+				var username = $("#username").val();
+				var password = $("#password").val();
+				$("#progress").html('Loading...');
+				$("#progress").css('color', 'green');
+				$("#progress").css('font-weight', 'bolder');
+
+				$.post('http://78.46.254.56/GIPC/mobileapi/pgLogin.php', {
+					username : username,
+					password : password
+				}, function(data, status) {
+					console.log(data);
+					console.log(status);
+					if (data == 'failed') {
+
+						$("#progress").html('Incorrect credentials');
+						$("#progress").css('color', 'red');
+						$("#progress").css('font-weight', 'bolder');
+
+					} else {
+						var sep = data.split("|");
+						$("#contentApplications").html(sep[0]);
+						$("#contentQuota").html(sep[1]);
+						$("#contenttechtrans").html(sep[2]);
+						$("#contentstrtegic").html(sep[3]);
+						$("#progress").html('Redirecting...');
+						$("#opp_sector").append(sep[4]);
+
+						// window.location = '#pgFunctions';
+						$.mobile.pageContainer.pagecontainer("change", "#pgFunctions", {
+							transition : "pop"
+						});
+						// $.mobile.location.href("#pgFunctions", {transition: "pop"})
+						// $.mobile.changePage("#pgFunctions");
+
+						$("#progress").html('');
+					};
+				});
+
+				// event.preventDefault();
+			});
+			$("#btnfindopp").click(function() {
+				$.mobile.pageContainer.pagecontainer("change", "#pglistopps", {
+							transition : "pop"
+				});
+				$("#contentlistopps").html('<p>Searching...</p>');
+
+				var opp_keywords = $("#opp_keywords").val();
+				var opp_sector = $("#opp_sector").val();
+				var opp_markets = $("#opp_markets").val();
+
+				$.post('http://78.46.254.56/GIPC/mobileapi/pgFindOpp.php', {
+					opp_keywords:opp_keywords,
+					opp_sector:opp_sector,
+					opp_markets:opp_markets
+					
+				}, function(data, status) {
+					if (data == 'failed') {
+
+						$("#contentlistopps").html('<p style="color:red">An error occured...</p>');
+
+					} else {
+						$("#contentlistopps").html(data);
+					}
+					
+				});
+
+				// event.preventDefault();
+			});
+
+			$("#btnforpass").click(function() {
+				var uname = $("#uname").val();
+				$("#fprogress").html('Loading...');
+				$("#fprogress").css('color', 'green');
+				$("#fprogress").css('font-weight', 'bolder');
+
+				$.post('http://78.46.254.56/GIPC/mobileapi/forgpass.php', {
+					username : uname
+				}, function(data, status) {
+					console.log(data);
+					console.log(status);
+					if (data == 'failed') {
+						$("#fprogress").html('Invalid username');
+						$("#fprogress").css('color', 'red');
+						$("#fprogress").css('font-weight', 'bolder');
+					} else {
+						$("#fprogress").html(data);
+						$("#fprogress").css('color', 'green');
+						$("#fprogress").css('font-weight', 'bolder');
+						$("#uname").val('');
+					}
+				});
+
+				// event.preventDefault();
+			});
+
+			$("#btnchangepass").click(function() {
+				var uname = $("#uname").val();
+				var oldpass = $("#oldpass").val();
+				var newpass = $("#newpass").val();
+				
+				$("#cprogress").html('Loading...');
+				$("#cprogress").css('color', 'green');
+				$("#cprogress").css('font-weight', 'bolder');
+
+				$.post('http://78.46.254.56/GIPC/mobileapi/changepass.php', {
+					username : uname,
+					oldpass : oldpass,
+					newpass : newpass
+				}, function(data, status) {
+					console.log(data);
+					console.log(status);
+					if (data == 'failed') {
+						$("#cprogress").html('Invalid details');
+						$("#cprogress").css('color', 'red');
+						$("#cprogress").css('font-weight', 'bolder');
+					} else {
+						$("#cprogress").html(data);
+						$("#cprogress").css('color', 'green');
+						$("#cprogress").css('font-weight', 'bolder');
+						$("#uname").val('');
+						$("#oldpass").val('');
+						$("#newpass").val('');
+					}
+				});
+
+				// event.preventDefault();
+			});
+
+			$("#btnsignup").click(function() {
+				var fname = $("#fname").val();
+				var gender = $("#gender").val();
+				var username = $("#susername").val();
+				var password = $("#spassword").val();
+				var email = $("#email").val();
+				var mobile = $("#mobile").val();
+				$("#sprogress").html('Loading...');
+				$("#sprogress").css('color', 'green');
+				$("#sprogress").css('font-weight', 'bolder');
+
+				$.post('http://78.46.254.56/GIPC/mobileapi/signup.php', {
+					fname : fname,
+					gender : gender,
+					username : username,
+					password : password,
+					email : email,
+					mobile : mobile
+				}, function(data, status) {
+					if (data == 'failed') {
+						$("#sprogress").html('Failed. Please try again later.');
+						$("#sprogress").css('color', 'red');
+						$("#sprogress").css('font-weight', 'bolder');
+					} else if (data == 'success') {
+						$("#sprogress").html('Sign up complete! You can go back to <a href="#pgLogin" style="text-decoration: none;">&larr;Sign in</a>.');
+						$("#sprogress").css('color', 'green');
+						$("#sprogress").css('font-weight', 'bolder');
+					} else if (data == 'taken') {
+						$("#sprogress").html('Username has already been taken. Please try another one.');
+						$("#sprogress").css('color', 'red');
+						$("#sprogress").css('font-weight', 'bolder');
+					}
+				});
+
+				// event.preventDefault();
+			});
+
+			$("#btnEnquiry").click(function() {
+				var enq_fname = $("#enq_fname").val();
+				var enq_cname = $("#enq_cname").val();
+				var enq_interest = $("#enq_interest").val();
+				var enq_origin = $("#enq_origin").val();
+				var enq_email = $("#enq_email").val();
+				var enq_mobile = $("#enq_mobile").val();
+				var enq_enquiry = $("#enq_enquiry").val();
+				$("#enq_progress").html('Loading...');
+				$("#enq_progress").css('color', 'green');
+				$("#enq_progress").css('font-weight', 'bolder');
+
+				$.post('http://78.46.254.56/GIPC/mobileapi/pgEnquiry.php', {
+					enq_fname : enq_fname,
+					enq_cname : enq_cname,
+					enq_interest : enq_interest,
+					enq_origin : enq_origin,
+					enq_email : enq_email,
+					enq_mobile : enq_mobile,
+					enq_enquiry : enq_enquiry
+				}, function(data, status) {
+					if (data == 'success') {
+						$("#enq_progress").html('Enquiry submitted. An officer will get back to you.');
+						$("#enq_progress").css('color', 'green');
+						$("#enq_progress").css('font-weight', 'bolder');
+					} else if (data == 'failed') {
+						$("#enq_progress").html('Incorrect credentials');
+						$("#enq_progress").css('color', 'red');
+						$("#enq_progress").css('font-weight', 'bolder');
+
+					}
+				});
+
+				// event.preventDefault();
+			});
+			$("#btnRenewal").click(function() {
+				var rep_fname = $("#rep_fname").val();
+				var rep_cname = $("#rep_cname").val();
+				var rep_email = $("#rep_email").val();
+				var rep_mobile = $("#rep_mobile").val();
+				var rep_reason = $("#rep_reason").val();
+
+				$("#rep_progress").html('Loading...');
+				$("#rep_progress").css('color', 'green');
+				$("#rep_progress").css('font-weight', 'bolder');
+
+				$.post('http://78.46.254.56/GIPC/mobileapi/pgRenewal.php', {
+					rep_fname : rep_fname,
+					rep_cname : rep_cname,
+					rep_email : rep_email,
+					rep_mobile : rep_mobile,
+					rep_reason : rep_reason
+				}, function(data, status) {
+					if (data == 'success') {
+						$("#rep_progress").html('Certificate Renewal request submitted. An officer will get back to you.');
+						$("#rep_progress").css('color', 'green');
+						$("#rep_progress").css('font-weight', 'bolder');
+					} else if (data == 'failed') {
+						$("#rep_progress").html('Incorrect credentials');
+						$("#rep_progress").css('color', 'red');
+						$("#rep_progress").css('font-weight', 'bolder');
+
+					}
+				});
+
+				// event.preventDefault();
+			});
+		</script>
+	</body>
+</html>
